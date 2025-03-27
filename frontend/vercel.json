@@ -1,0 +1,45 @@
+# Configuración para Vercel (Frontend)
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/logo192.png",
+      "dest": "/logo192.png"
+    },
+    {
+      "src": "/logo512.png",
+      "dest": "/logo512.png"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://futurelex-api.vercel.app",
+    "REACT_APP_STRIPE_PUBLIC_KEY": "pk_test_your_stripe_public_key",
+    "REACT_APP_SUPABASE_URL": "https://dhbonvgjcxgntjrlfiac.supabase.co",
+    "REACT_APP_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoYm9udmdqY3hnbnRqcmxmaWFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI1MzgzMzEsImV4cCI6MjA1ODExNDMzMX0.JY3-VpM4cVVcV4sdygdRdWnjMSRD_ci8wRtqSoIXlxA"
+  }
+}
